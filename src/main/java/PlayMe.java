@@ -1,3 +1,6 @@
+import domain.Person;
+import org.apache.commons.lang.ObjectUtils;
+import org.apache.commons.lang.Validate;
 import usecase.SomeUseCaseToGetPersonUsingInMemoryCache;
 
 import java.util.concurrent.TimeUnit;
@@ -26,14 +29,16 @@ public class PlayMe {
 
     public void getAndValidateJohn(final SomeUseCaseToGetPersonUsingInMemoryCache useCase) {
         for (int i = 0; i < 100; i++) {
-            useCase.getPersonByName(JOHN_DOE);
+            final Person actualJohn = useCase.getPersonByName(JOHN_DOE);
+            Validate.isTrue(ObjectUtils.equals(actualJohn, Person.builder().name(JOHN_DOE.toUpperCase()).build()));
             // If the cache is enabled, only 1 John Doe should be printed in the console
         }
     }
 
     public void getAndValidateMary(final SomeUseCaseToGetPersonUsingInMemoryCache useCase) {
         for (int i = 0; i < 100; i++) {
-            useCase.getPersonByName(MARY_JANE);
+            final Person actualMary = useCase.getPersonByName(MARY_JANE);
+            Validate.isTrue(ObjectUtils.equals(actualMary, Person.builder().name(MARY_JANE.toUpperCase()).build()));
             // If the cache is enabled, only 1 Mary Jane should be printed in the console
         }
     }
