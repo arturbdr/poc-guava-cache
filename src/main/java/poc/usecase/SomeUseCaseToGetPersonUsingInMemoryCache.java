@@ -1,10 +1,10 @@
-package usecase;
+package poc.usecase;
 
 import com.google.common.cache.CacheBuilder;
 import com.google.common.cache.CacheLoader;
 import com.google.common.cache.LoadingCache;
-import domain.Person;
-import gateway.mysql.SomeGatewayImpl;
+import poc.domain.Person;
+import poc.gateway.mysql.SomeGatewayImpl;
 
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;

@@ -1,6 +1,6 @@
-package gateway.mysql;
+package poc.gateway.mysql;
 
-import domain.Person;
+import poc.domain.Person;
 import lombok.NoArgsConstructor;
 
 @NoArgsConstructor

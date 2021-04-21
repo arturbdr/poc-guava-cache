@@ -10,14 +10,14 @@
     <packaging>jar</packaging>
 
     <version>1.0.0</version>
-    <description>POC of old Guava version using Cache</description>
+    <description>POC Guava - in memory Cache</description>
 
     <properties>
-        <commons.lang.version>2.4</commons.lang.version>
-        <guava.version>15.0</guava.version>
-        <java.version>1.7</java.version>
+        <guava.version>30.1.1-jre</guava.version>
+        <java.version>11</java.version>
         <lombok.version>1.18.12</lombok.version>
         <maven-compiler-plugin.version>3.1</maven-compiler-plugin.version>
+        <versions-maven-plugin.version>2.8.1</versions-maven-plugin.version>
     </properties>
 
     <dependencies>
@@ -30,11 +30,6 @@
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <version>${lombok.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>commons-lang</groupId>
-            <artifactId>commons-lang</artifactId>
-            <version>${commons.lang.version}</version>
         </dependency>
     </dependencies>
 
@@ -51,6 +46,12 @@
                     <encoding>UTF-8</encoding>
                     <showWarnings>true</showWarnings>
                 </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>versions-maven-plugin</artifactId>
+                <version>${versions-maven-plugin.version}</version>
             </plugin>
 
         </plugins>
